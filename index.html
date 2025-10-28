@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEXUM Attendance - 出退勤管理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <img src="assets/vexum-logo.png" alt="VEXUM Logo" class="logo-image">
+        <h1 class="app-title">VEXUM Attendance</h1>
+        <p class="company-slogan">すべての人に 挑戦の自由を。</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- ユーザー情報入力 -->
+      <section class="user-info">
+        <div class="input-group">
+          <label for="userName">氏名</label>
+          <input type="text" id="userName" placeholder="例: 岩田龍弥" required>
+        </div>
+      </section>
+
+      <!-- ステータス表示 -->
+      <section class="status-section" id="statusSection">
+        <h2>📊 今日のステータス</h2>
+        <div id="statusContent">
+          <p class="status-message">ユーザー情報を入力してください</p>
+        </div>
+      </section>
+
+      <!-- 打刻ボタン -->
+      <section class="action-buttons">
+        <button id="clockInBtn" class="btn btn-primary">
+          🌅 出勤
+        </button>
+        <button id="clockOutBtn" class="btn btn-secondary">
+          🌙 退勤
+        </button>
+      </section>
+
+      <!-- 課題完了セクション -->
+      <section class="complete-section">
+        <h2>✅ 課題完了報告</h2>
+        <p class="complete-description">課題が完了したら下のボタンを押してください。</p>
+        <button id="completeBtn" class="btn btn-success">
+          🎉 課題完了
+        </button>
+      </section>
+
+      <!-- メッセージ表示エリア -->
+      <section class="message-section">
+        <div id="messageBox" class="message-box hidden"></div>
+      </section>
+
+      <!-- 勤務時間表示 -->
+      <section class="hours-section" id="hoursSection">
+        <h2>⏰ 勤務時間</h2>
+        <div class="hours-grid">
+          <div class="hours-card">
+            <span class="hours-label">今週</span>
+            <span class="hours-value" id="weeklyHours">-</span>
+          </div>
+          <div class="hours-card">
+            <span class="hours-label">今月</span>
+            <span class="hours-value" id="monthlyHours">-</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 VEXUM Inc. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- ローディングスピナー -->
+  <div id="loadingSpinner" class="loading-spinner hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

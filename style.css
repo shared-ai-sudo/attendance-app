@@ -1,0 +1,624 @@
+/* ==========================================
+   VEXUM Attendance - モダンスタイル
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* VEXUMブランドカラー */
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
+  --color-primary-light: #38bdf8;
+
+  /* グレースケール */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* ステータスカラー */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /* シャドウ */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+
+  /* スペーシング */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* ボーダーラジウス */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* フォント */
+  --font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ==========================================
+   基本スタイル
+   ========================================== */
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-gray-50);
+  color: var(--color-gray-900);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   コンテナ
+   ========================================== */
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   ヘッダー
+   ========================================== */
+
+header {
+  text-align: center;
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInDown 0.6s ease-out;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.logo-image {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  animation: logoFadeIn 0.8s ease-out;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.app-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.company-slogan {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0 var(--spacing-md);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   メインコンテンツ
+   ========================================== */
+
+main {
+  flex: 1;
+}
+
+/* ==========================================
+   セクション
+   ========================================== */
+
+section {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+section:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-gray-800);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ==========================================
+   フォーム
+   ========================================== */
+
+.user-info {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  transition: color 0.2s;
+}
+
+.input-group input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: var(--font-family);
+  transition: all 0.2s ease;
+  background: var(--color-white);
+  color: var(--color-gray-900);
+}
+
+.input-group input:hover {
+  border-color: var(--color-gray-400);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.input-group input::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* ==========================================
+   ステータスセクション
+   ========================================== */
+
+.status-section {
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  border: none;
+}
+
+.status-section h2 {
+  color: var(--color-white);
+  opacity: 0.95;
+}
+
+#statusContent {
+  padding: var(--spacing-lg) 0;
+}
+
+.status-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-white);
+}
+
+.status-detail {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: var(--spacing-xs) 0;
+}
+
+.status-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.motivation {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   ボタン
+   ========================================== */
+
+.btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-gray-600);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-gray-700);
+}
+
+.btn-success {
+  background: var(--color-success);
+  color: var(--color-white);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #059669;
+}
+
+/* アクションボタン */
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+/* 課題完了セクション */
+.complete-section {
+  text-align: center;
+}
+
+.complete-description {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.complete-section .btn {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   メッセージボックス
+   ========================================== */
+
+.message-section {
+  margin-top: var(--spacing-lg);
+}
+
+.message-box {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-box.hidden {
+  display: none;
+}
+
+.message-info {
+  background: #dbeafe;
+  color: #1e40af;
+  border-left-color: var(--color-info);
+}
+
+.message-success {
+  background: #d1fae5;
+  color: #065f46;
+  border-left-color: var(--color-success);
+}
+
+.message-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border-left-color: var(--color-danger);
+}
+
+.message-warning {
+  background: #fef3c7;
+  color: #92400e;
+  border-left-color: var(--color-warning);
+}
+
+/* ==========================================
+   勤務時間セクション
+   ========================================== */
+
+.hours-section {
+  background: var(--color-white);
+}
+
+.hours-section h2 {
+  color: var(--color-gray-800);
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.hours-card {
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.hours-card:hover {
+  border-color: var(--color-primary);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.hours-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.hours-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ==========================================
+   ローディングスピナー
+   ========================================== */
+
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-spinner.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+
+footer {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+/* ==========================================
+   レスポンシブ
+   ========================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  header {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .logo-image {
+    width: 100px;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .company-slogan {
+    font-size: 0.875rem;
+  }
+
+  section {
+    padding: var(--spacing-md);
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    font-size: 0.9375rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 80px;
+  }
+
+  .app-title {
+    font-size: 1.25rem;
+  }
+
+  .company-slogan {
+    font-size: 0.8125rem;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   ユーティリティ
+   ========================================== */
+
+.hidden {
+  display: none !important;
+}
+
+/* スムーススクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* セレクション */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
