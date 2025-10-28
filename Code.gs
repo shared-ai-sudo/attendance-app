@@ -17,7 +17,7 @@
 const TIMEZONE = 'Asia/Tokyo';
 
 // ---- デフォルトアプリURL ----
-const DEFAULT_APP_URL = 'https://your-github-username.github.io/attendance-app';
+const DEFAULT_APP_URL = 'https://shared-ai-sudo.github.io/attendance-app';
 
 // ---- メッセージ雛形 ----
 const MORNING_MESSAGES = [
