@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VEXUM出退勤管理アプリ - すべての人に 挑戦の自由を。">
+  <meta name="theme-color" content="#0ea5e9">
   <title>VEXUM Attendance - 出退勤管理</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="assets/vexum-logo.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="VEXUM勤怠">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -82,6 +94,21 @@
   <div id="loadingSpinner" class="loading-spinner hidden">
     <div class="spinner"></div>
   </div>
+
+  <!-- Service Worker 登録 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/attendance-app/service-worker.js')
+          .then((registration) => {
+            console.log('✅ Service Worker登録成功:', registration.scope);
+          })
+          .catch((error) => {
+            console.error('❌ Service Worker登録失敗:', error);
+          });
+      });
+    }
+  </script>
 
   <script src="main.js"></script>
 </body>

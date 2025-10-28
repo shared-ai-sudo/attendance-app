@@ -1,0 +1,55 @@
+{
+  "name": "VEXUM Attendance",
+  "short_name": "VEXUM勤怠",
+  "description": "VEXUM出退勤管理アプリ - すべての人に 挑戦の自由を。",
+  "start_url": "/attendance-app/",
+  "scope": "/attendance-app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "lang": "ja",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/vexum-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/vexum-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "business"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "出勤",
+      "short_name": "出勤",
+      "description": "出勤打刻",
+      "url": "/attendance-app/?action=clockin",
+      "icons": [
+        {
+          "src": "assets/vexum-logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "退勤",
+      "short_name": "退勤",
+      "description": "退勤打刻",
+      "url": "/attendance-app/?action=clockout",
+      "icons": [
+        {
+          "src": "assets/vexum-logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
